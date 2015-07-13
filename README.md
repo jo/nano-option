@@ -1,6 +1,9 @@
 # nano-option
 Create a nano adapter if option is not already a nano adapter. Also set `X-Couch-Full-Commit` header.
 
+[![Build
+Status](https://travis-ci.org/eHealthAfrica/nano-option.svg?branch=master)](https://travis-ci.org/eHealthAfrica/nano-option)
+
 Used for the
 [couchdb-bootstrap](https://github.com/eHealthAfrica/couchdb-bootstrap) suite.
 
