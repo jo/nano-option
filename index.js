@@ -1,7 +1,7 @@
 var nano = require('nano')
 var defaultsDeep = require('lodash/object/defaultsDeep')
 
-nanoDefaults = {
+var nanoDefaults = {
   defaultHeaders: {
     'X-Couch-Full-Commit': 'true'
   }
