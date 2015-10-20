@@ -36,6 +36,21 @@ test('from db url string', function(t) {
   t.end()
 })
 
+test('from db url string with trailing slash', function(t) {
+  var db = nanoOption('http://localhost:5984/mydb/')
+
+  t.equal(typeof db, 'object')
+  t.equal(typeof db.config, 'object')
+  t.deepEqual(db.config, {
+    url: 'http://localhost:5984',
+    db: 'mydb',
+    defaultHeaders: {
+      'X-Couch-Full-Commit': 'true'
+    }
+  })
+  t.end()
+})
+
 test('from config object', function(t) {
   var db = nanoOption({
     url: 'http://localhost:5984/mydb'
