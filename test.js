@@ -110,3 +110,34 @@ test('with nano object', function(t) {
   })
   t.end()
 })
+
+
+test('requestDefaults are preserved after db.use', function(t) {
+  var couch = nanoOption({
+    url: 'http://localhost:5984',
+    requestDefaults: {
+      auth: {
+        user: 'bob',
+        pass: 'secure'
+      }
+    }
+  })
+  var db = couch.use('mydb')
+  
+  t.equal(typeof db, 'object')
+  t.equal(typeof db.config, 'object')
+  t.deepEqual(db.config, {
+    url: 'http://localhost:5984',
+    db: 'mydb',
+    defaultHeaders: {
+      'X-Couch-Full-Commit': 'true'
+    },
+    requestDefaults: {
+      auth: {
+        user: 'bob',
+        pass: 'secure'
+      }
+    }
+  })
+  t.end()
+})
