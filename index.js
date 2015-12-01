@@ -1,5 +1,6 @@
 var nano = require('nano')
 var defaultsDeep = require('lodash/object/defaultsDeep')
+var assign = require('lodash/object/assign')
 
 var nanoDefaults = {
   defaultHeaders: {
@@ -15,6 +16,12 @@ function makeNanoAdapter(option) {
   if (typeof option === 'string') {
     var url = option.replace(/\/$/, '')
     return nano(url)
+  }
+  
+  if (typeof option === 'object' && option.url) {
+    return nano(assign({}, option, {
+      url: option.url.replace(/\/$/, '')
+    }))
   }
 
   return nano(option)
