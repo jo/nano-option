@@ -1,6 +1,6 @@
 var nano = require('nano')
-var defaultsDeep = require('lodash/object/defaultsDeep')
-var assign = require('lodash/object/assign')
+var defaultsDeep = require('lodash/defaultsDeep')
+var assign = require('lodash/assign')
 
 var nanoDefaults = {
   defaultHeaders: {
