@@ -6,7 +6,7 @@ Create a nano adapter if option is not already a nano adapter. Also set
 Status](https://travis-ci.org/jo/nano-option.svg?branch=master)](https://travis-ci.org/jo/nano-option)
 
 Used within the
-[couchdb-bootstrap](https://github.com/eHealthAfrica/couchdb-bootstrap) suite.
+[couchdb-bootstrap](https://github.com/jo/couchdb-bootstrap) suite.
 
 ## Usage
 ```js
