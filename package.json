@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eHealthAfrica/nano-option.git"
+    "url": "https://github.com/jo/nano-option.git"
   },
   "keywords": [
     "couchdb",
@@ -18,9 +18,9 @@
   "author": "Johannes J. Schmidt <schmidt@netzmerk.com> (http://die-tf.de/)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/eHealthAfrica/nano-option/issues"
+    "url": "https://github.com/jo/nano-option/issues"
   },
-  "homepage": "https://github.com/eHealthAfrica/nano-option#readme",
+  "homepage": "https://github.com/jo/nano-option#readme",
   "dependencies": {
     "lodash": "^4.3.0",
     "nano": "^6.2.0"
