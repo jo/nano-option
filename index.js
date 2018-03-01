@@ -8,16 +8,16 @@ var nanoDefaults = {
   }
 }
 
-function isNanoAdapter(option) {
+function isNanoAdapter (option) {
   return typeof option.config === 'object'
 }
 
-function makeNanoAdapter(option) {
+function makeNanoAdapter (option) {
   if (typeof option === 'string') {
     var url = option.replace(/\/$/, '')
     return nano(url)
   }
-  
+
   if (typeof option === 'object' && option.url) {
     return nano(assign({}, option, {
       url: option.url.replace(/\/$/, '')
@@ -27,7 +27,7 @@ function makeNanoAdapter(option) {
   return nano(option)
 }
 
-module.exports = function(option) {
+module.exports = function (option) {
   var db = isNanoAdapter(option) ? option : makeNanoAdapter(option)
 
   defaultsDeep(db.config, nanoDefaults)
