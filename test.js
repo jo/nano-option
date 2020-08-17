@@ -11,7 +11,6 @@ test('from server url string', function (t) {
   t.deepEqual(db.config, {
     url: 'http://localhost:5984',
     requestDefaults: {
-      jar: false
     },
     defaultHeaders: {
       'X-Couch-Full-Commit': 'true'
@@ -30,7 +29,6 @@ test('from object with server url string with trailing slash', function (t) {
   t.deepEqual(db.config, {
     url: 'http://localhost:5984',
     requestDefaults: {
-      jar: false
     },
     defaultHeaders: {
       'X-Couch-Full-Commit': 'true'
@@ -47,7 +45,6 @@ test('from server url string with trailing slash', function (t) {
   t.deepEqual(db.config, {
     url: 'http://localhost:5984',
     requestDefaults: {
-      jar: false
     },
     defaultHeaders: {
       'X-Couch-Full-Commit': 'true'
@@ -110,7 +107,7 @@ test('with advanced object', function (t) {
     parseUrl: false,
     defaultHeaders: {
       'X-Couch-Full-Commit': 'false',
-      'foo': 'bar'
+      foo: 'bar'
     }
   })
 
@@ -121,11 +118,10 @@ test('with advanced object', function (t) {
     db: 'mydb',
     parseUrl: false,
     requestDefaults: {
-      jar: false
     },
     defaultHeaders: {
       'X-Couch-Full-Commit': 'false',
-      'foo': 'bar'
+      foo: 'bar'
     }
   })
   t.end()
