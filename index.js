@@ -1,8 +1,8 @@
-var nano = require('nano')
-var defaultsDeep = require('lodash/defaultsDeep')
-var assign = require('lodash/assign')
+const nano = require('nano')
+const defaultsDeep = require('lodash/defaultsDeep')
+const assign = require('lodash/assign')
 
-var nanoDefaults = {
+const nanoDefaults = {
   defaultHeaders: {
     'X-Couch-Full-Commit': 'true'
   }
@@ -14,7 +14,7 @@ function isNanoAdapter (option) {
 
 function makeNanoAdapter (option) {
   if (typeof option === 'string') {
-    var url = option.replace(/\/$/, '')
+    const url = option.replace(/\/$/, '')
     return nano(url)
   }
 
@@ -28,7 +28,7 @@ function makeNanoAdapter (option) {
 }
 
 module.exports = function (option) {
-  var db = isNanoAdapter(option) ? option : makeNanoAdapter(option)
+  const db = isNanoAdapter(option) ? option : makeNanoAdapter(option)
 
   defaultsDeep(db.config, nanoDefaults)
 
