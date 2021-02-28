@@ -1,10 +1,10 @@
-var test = require('tap').test
-var nano = require('nano')
+const test = require('tap').test
+const nano = require('nano')
 
-var nanoOption = require('./')
+const nanoOption = require('./')
 
 test('from server url string', function (t) {
-  var db = nanoOption('http://localhost:5984')
+  const db = nanoOption('http://localhost:5984')
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
@@ -20,7 +20,7 @@ test('from server url string', function (t) {
 })
 
 test('from object with server url string with trailing slash', function (t) {
-  var db = nanoOption({
+  const db = nanoOption({
     url: 'http://localhost:5984/'
   })
 
@@ -38,7 +38,7 @@ test('from object with server url string with trailing slash', function (t) {
 })
 
 test('from server url string with trailing slash', function (t) {
-  var db = nanoOption('http://localhost:5984/')
+  const db = nanoOption('http://localhost:5984/')
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
@@ -54,7 +54,7 @@ test('from server url string with trailing slash', function (t) {
 })
 
 test('from db url string', function (t) {
-  var db = nanoOption('http://localhost:5984/mydb')
+  const db = nanoOption('http://localhost:5984/mydb')
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
@@ -69,7 +69,7 @@ test('from db url string', function (t) {
 })
 
 test('from db url string with trailing slash', function (t) {
-  var db = nanoOption('http://localhost:5984/mydb/')
+  const db = nanoOption('http://localhost:5984/mydb/')
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
@@ -84,7 +84,7 @@ test('from db url string with trailing slash', function (t) {
 })
 
 test('from config object', function (t) {
-  var db = nanoOption({
+  const db = nanoOption({
     url: 'http://localhost:5984/mydb'
   })
 
@@ -101,7 +101,7 @@ test('from config object', function (t) {
 })
 
 test('with advanced object', function (t) {
-  var db = nanoOption({
+  const db = nanoOption({
     url: 'http://localhost:5984',
     db: 'mydb',
     parseUrl: false,
@@ -128,7 +128,7 @@ test('with advanced object', function (t) {
 })
 
 test('with nano object', function (t) {
-  var db = nanoOption(nano('http://localhost:5984/mydb'))
+  const db = nanoOption(nano('http://localhost:5984/mydb'))
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
