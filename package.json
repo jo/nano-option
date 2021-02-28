@@ -5,7 +5,6 @@
   "scripts": {
     "test": "tap --reporter=spec test.js",
     "pretest": "standard",
-    "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release"
   },
   "repository": {
