@@ -32,5 +32,8 @@
     "standard": "^14.3.4",
     "tap": "^14.10.8"
   },
-  "version": "0.0.0-development"
+  "version": "0.0.0-development",
+  "release": {
+    "branches": ["main"]
+  }
 }
