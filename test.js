@@ -8,7 +8,7 @@ test('from server url string', function (t) {
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
-  t.deepEqual(db.config, {
+  t.same(db.config, {
     url: 'http://localhost:5984',
     requestDefaults: {
     },
@@ -26,7 +26,7 @@ test('from object with server url string with trailing slash', function (t) {
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
-  t.deepEqual(db.config, {
+  t.same(db.config, {
     url: 'http://localhost:5984',
     requestDefaults: {
     },
@@ -42,7 +42,7 @@ test('from server url string with trailing slash', function (t) {
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
-  t.deepEqual(db.config, {
+  t.same(db.config, {
     url: 'http://localhost:5984',
     requestDefaults: {
     },
@@ -58,7 +58,7 @@ test('from db url string', function (t) {
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
-  t.deepEqual(db.config, {
+  t.same(db.config, {
     url: 'http://localhost:5984',
     db: 'mydb',
     defaultHeaders: {
@@ -73,7 +73,7 @@ test('from db url string with trailing slash', function (t) {
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
-  t.deepEqual(db.config, {
+  t.same(db.config, {
     url: 'http://localhost:5984',
     db: 'mydb',
     defaultHeaders: {
@@ -90,13 +90,18 @@ test('from config object', function (t) {
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
-  t.deepEqual(db.config, {
+  t.same(db.config, {
     url: 'http://localhost:5984',
     db: 'mydb',
     defaultHeaders: {
       'X-Couch-Full-Commit': 'true'
     }
   })
+  t.end()
+})
+
+test('from config object without url throws', function (t) {
+  t.throws(() => nanoOption({}))
   t.end()
 })
 
@@ -113,7 +118,7 @@ test('with advanced object', function (t) {
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
-  t.deepEqual(db.config, {
+  t.same(db.config, {
     url: 'http://localhost:5984',
     db: 'mydb',
     parseUrl: false,
@@ -132,7 +137,7 @@ test('with nano object', function (t) {
 
   t.equal(typeof db, 'object')
   t.equal(typeof db.config, 'object')
-  t.deepEqual(db.config, {
+  t.same(db.config, {
     url: 'http://localhost:5984',
     db: 'mydb',
     defaultHeaders: {
